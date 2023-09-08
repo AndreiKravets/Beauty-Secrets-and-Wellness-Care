@@ -1,0 +1,100 @@
+.s-header {
+  box-shadow: 1px -10px 20px 0px gray;
+  display: block;
+  position: relative;
+
+  &--rtl {
+    direction: rtl;
+  }
+
+  header {
+    display: flex;
+    justify-content: space-between;
+    margin: auto;
+    align-items: center;
+  }
+
+  &__logo {
+    .image-ratio {
+      width: 200px;
+      height: 50px;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__menu {
+    display: flex;
+    a {
+      margin: 10px;
+      color: #7E96A6;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+    @media screen and (max-width: 700px) {
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      position: fixed;
+      left: -80%;
+      width: 80%;
+      top: 0;
+      background-color: aliceblue;
+      z-index: 9;
+    }
+  }
+
+  &__menu-btn {
+    display: none;
+    position: absolute;
+    right: 30px;
+    top: 30px;
+    width: 30px;
+    height: 30px;
+    & svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      opacity: 0;
+      z-index: 10;
+      &:first-child {
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: 700px) {
+      display: block;
+    }
+  }
+
+  &__account{
+    display: flex;
+    svg{
+      width: 20px;
+      height: 20px;
+      margin: 10px;
+    }
+  }
+
+  &--menu-active {
+    .s-header__menu {
+      @media screen and (max-width: 700px) {
+        transition: all 0.3s ease-in-out;
+        left: 0;
+      }
+    }
+    .s-header__menu-btn{
+      & svg {
+        opacity: 1;
+        &:first-child {
+          opacity: 0;
+        }
+      }
+    }
+  }
+}

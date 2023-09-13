@@ -1,11 +1,16 @@
+#shopify-section-header{
+  position: sticky;
+  top: -100px;
+  transition: all 0.3s ease-in-out;
+  &.sticky{
+   top: 0px;
+}
+}
 .s-header {
-  box-shadow: 1px -10px 20px 0px gray;
+  box-shadow: 1px -10px 20px 0px grey;
   display: block;
   position: relative;
-
-  &--rtl {
-    direction: rtl;
-  }
+  z-index: 999;
 
   header {
     display: flex;
@@ -14,47 +19,13 @@
     align-items: center;
   }
 
-  &__logo {
-    .image-ratio {
-      width: 200px;
-      height: 50px;
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-      }
-    }
-  }
-
-  &__menu {
-    display: flex;
-    a {
-      margin: 10px;
-      color: #7E96A6;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-    @media screen and (max-width: 700px) {
-      transition: all 0.3s ease-in-out;
-      display: flex;
-      flex-direction: column;
-      height: 100vh;
-      position: fixed;
-      left: -80%;
-      width: 80%;
-      top: 0;
-      background-color: aliceblue;
-      z-index: 9;
-    }
-  }
-
   &__menu-btn {
+    position: relative;
     display: none;
-    position: absolute;
-    right: 30px;
-    top: 30px;
-    width: 30px;
-    height: 30px;
+    left: 20px;
+    width: 20px;
+    height: 20px;
+
     & svg {
       width: 100%;
       height: 100%;
@@ -63,18 +34,68 @@
       top: 0;
       opacity: 0;
       z-index: 10;
+      transform: scale(0.8);
+      transition: transform .15s ease, opacity .15s ease;
+
       &:first-child {
+        transform: scale(1.07);
         opacity: 1;
       }
     }
-    @media screen and (max-width: 700px) {
+
+    @media screen and (max-width: 990px) {
       display: block;
     }
   }
 
-  &__account{
+  &__logo {
+    img {
+      display: block;
+      height: 50px;
+      width: 200px;
+      object-fit: contain;
+    }
+
+    @media screen and (max-width: 990px) {
+      position: absolute;
+      right: 50%;
+      transform: translateX(50%);
+    }
+  }
+
+  &__menu {
+    flex: 1;
+
+    a {
+      font-size: 20px;
+      text-decoration: none;
+      text-transform: uppercase;
+      margin: 10px;
+    }
+
+    @media screen and (max-width: 990px) {
+      left: -100vw;
+      position: fixed;
+      top: 80px;
+      height: 100%;
+      width: 100vw;
+      max-width: 400px;
+      transition: left .15s ease;
+
+      a {
+        display: block;
+        margin: 0;
+        padding: 16px;
+        padding-left: 21px;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  &__account {
     display: flex;
-    svg{
+
+    svg {
       width: 20px;
       height: 20px;
       margin: 10px;
@@ -82,18 +103,24 @@
   }
 
   &--menu-active {
-    .s-header__menu {
-      @media screen and (max-width: 700px) {
-        transition: all 0.3s ease-in-out;
-        left: 0;
-      }
-    }
-    .s-header__menu-btn{
+    .s-header__menu-btn {
       & svg {
         opacity: 1;
+        transition: transform .15s ease, opacity .15s ease;
+        transform: scale(1.07);
+
         &:first-child {
+          transform: scale(0.8);
           opacity: 0;
+          visibility: hidden;
         }
+      }
+    }
+
+    .s-header__menu {
+      @media screen and (max-width: 990px) {
+        left: 0;
+        transition: left .15s ease;
       }
     }
   }

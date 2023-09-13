@@ -1,19 +1,37 @@
-if (!customElements.get('s-header')) {
-  customElements.define('s-header', class SHeader extends HTMLElement {
-    constructor() {
+if(!customElements.get('s-header')){
+
+  customElements.define('s-header', class SHeader extends HTMLElement{
+    constructor(){
       super();
     }
 
-    connectedCallback() {
-      this.initEventListeners();
+    connectedCallback(){
+      this.mobMenu()
+      this.stickyHeader()
     }
 
-    initEventListeners(){
-      this.btn = this.querySelector('.s-header__menu-btn')
-      this.btn.addEventListener('click', () => {
-        this.classList.toggle('s-header--menu-active')
-      })
+    mobMenu() {
+      this.querySelector('.s-header__menu-btn').
+      addEventListener(
+        "click", () => (
+          this.classList.toggle('s-header--menu-active'),
+            document.querySelector('body').classList.toggle('hidden')
+        )
+      )
     }
+
+    stickyHeader() {
+      console.log(this.getAttribute('data-sticky'));
+      function addSticky(){
+        console.log(document.documentElement.scrollTop);
+        if(document.documentElement.scrollTop > 100){
+          document.getElementById('shopify-section-header').classList.add('sticky')
+        }
+      }
+
+      window.addEventListener('scroll', () => addSticky())
+    }
+
   })
-}
 
+}

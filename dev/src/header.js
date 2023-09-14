@@ -14,24 +14,26 @@ if(!customElements.get('s-header')){
       this.querySelector('.s-header__menu-btn').
       addEventListener(
         "click", () => (
-          this.classList.toggle('s-header--menu-active'),
-            document.querySelector('body').classList.toggle('hidden')
+          this.classList.toggle('s-header--menu-active'), document.querySelector('body').classList.toggle('hidden')
         )
       )
     }
 
     stickyHeader() {
-      console.log(this.getAttribute('data-sticky'));
       function addSticky(){
-        console.log(document.documentElement.scrollTop);
-        if(document.documentElement.scrollTop > 100){
-          document.getElementById('shopify-section-header').classList.add('sticky')
+        if(document.documentElement.scrollTop > 200){
+          document.querySelector('#shopify-section-header').classList.add('sticky')
+        }
+        else if(document.documentElement.scrollTop < 10){
+          document.querySelector('#shopify-section-header').classList.remove('sticky')
         }
       }
-
       window.addEventListener('scroll', () => addSticky())
     }
-
   })
-
 }
+
+
+
+
+

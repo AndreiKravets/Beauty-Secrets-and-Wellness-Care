@@ -1,0 +1,20 @@
+.main-product{
+&__row{
+  display: flex;
+}
+  &__gallery{
+    flex-basis: 50%;
+    display: flex;
+    flex-wrap: wrap;
+    .main-product__featured-image{
+      flex-basis: 100%;
+    }
+
+    img {
+      flex-basis: 50%;
+    }
+  }
+  &__content{
+    flex-basis: 50%;
+  }
+}

@@ -1,0 +1,37 @@
+{{ 'main-product.css' | asset_url | stylesheet_tag }}
+<script>
+  console.log({{ product | json }})
+</script>
+<div class="main-product">
+  <div class="main-product__row">
+      <div class="main-product__gallery">
+        <img src="{{ product.featured_image | img_url }}" alt="" class="main-product__featured-image">
+        {% for img in product.images %}
+          <img src="{{ img | img_url }}" alt="">
+        {% endfor %}
+      </div>
+    <div class="main-product__content">
+      <h2 class="main-product__content__title">
+        {{ product.title | escape }}
+      </h2>
+      {{ product.content }}
+      {{ product.description }}
+      {% form 'product', product %}
+        <input type="text" name="quantity" min="1" value="1">
+        <select name="id">
+          {% for variant in product.variants %}
+            <option value="{{ variant.id }}"
+                    {% if variant == product.selected_or_first_available_variant %}selected="selected"{% endif %}
+            >
+              {{ variant.title }} - {{ variant.price | money }}
+            </option>
+          {% endfor %}
+        </select>
+        <input type="submit" value="Add to cart">
+      {% endform %}
+    </div>
+  </div>
+</div>
+
+
+

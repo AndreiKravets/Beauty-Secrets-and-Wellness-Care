@@ -1,0 +1,18 @@
+.main-product__row {
+  display: flex;
+}
+.main-product__gallery {
+  flex-basis: 50%;
+  display: flex;
+  flex-wrap: wrap;
+}
+.main-product__gallery .main-product__featured-image {
+  flex-basis: 100%;
+}
+.main-product__gallery img {
+  flex-basis: 50%;
+}
+.main-product__content {
+  flex-basis: 50%;
+}
+/*# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIm1haW4tcHJvZHVjdC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUNBO0VBQ0U7O0FBRUE7RUFDRTtFQUNBO0VBQ0E7O0FBQ0E7RUFDRTs7QUFHRjtFQUNFOztBQUdKO0VBQ0UiLCJmaWxlIjoibWFpbi1wcm9kdWN0LmNzcyIsInNvdXJjZXNDb250ZW50IjpbIi5tYWluLXByb2R1Y3R7XHJcbiZfX3Jvd3tcclxuICBkaXNwbGF5OiBmbGV4O1xyXG59XHJcbiAgJl9fZ2FsbGVyeXtcclxuICAgIGZsZXgtYmFzaXM6IDUwJTtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBmbGV4LXdyYXA6IHdyYXA7XHJcbiAgICAubWFpbi1wcm9kdWN0X19mZWF0dXJlZC1pbWFnZXtcclxuICAgICAgZmxleC1iYXNpczogMTAwJTtcclxuICAgIH1cclxuXHJcbiAgICBpbWcge1xyXG4gICAgICBmbGV4LWJhc2lzOiA1MCU7XHJcbiAgICB9XHJcbiAgfVxyXG4gICZfX2NvbnRlbnR7XHJcbiAgICBmbGV4LWJhc2lzOiA1MCU7XHJcbiAgfVxyXG59Il19 */

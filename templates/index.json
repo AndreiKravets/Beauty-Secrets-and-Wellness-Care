@@ -2,10 +2,64 @@
   "sections": {
     "main": {
       "type": "empty-section",
-      "settings": {}
+      "settings": {
+      }
+    },
+    "5f599a8f-de6e-4c0a-a086-6d540d93ae2f": {
+      "type": "steps-scroll-section",
+      "blocks": {
+        "797deb51-b4d0-457c-908f-ba3c7cd08642": {
+          "type": "Step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman-in-park-afternoon.jpeg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quasi excepturi asperiores totam fugiat at!"
+          }
+        },
+        "d247c806-560c-400f-a87f-ea5bdc27344c": {
+          "type": "Step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/woman-infront-of-tree-with-berries.jpeg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quasi excepturi asperiores totam fugiat at!"
+          }
+        },
+        "157f0d70-3e3b-4d7e-b654-f893af89bd74": {
+          "type": "Step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/business-woman-with-wool-hat.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quasi excepturi asperiores totam fugiat at!"
+          }
+        },
+        "8690477b-0c3e-46ff-be48-8e68b75c9515": {
+          "type": "Step",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/applying-lip-balm.jpg",
+            "content": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellendus quasi excepturi asperiores totam fugiat at!"
+          }
+        }
+      },
+      "block_order": [
+        "797deb51-b4d0-457c-908f-ba3c7cd08642",
+        "d247c806-560c-400f-a87f-ea5bdc27344c",
+        "157f0d70-3e3b-4d7e-b654-f893af89bd74",
+        "8690477b-0c3e-46ff-be48-8e68b75c9515"
+      ],
+      "settings": {
+        "bg_color": "#FFFFFF",
+        "margin_top_desktop": 0,
+        "margin_top_mobile": 0,
+        "margin_bottom_desktop": 50,
+        "margin_bottom_mobile": 50,
+        "padding_top_desktop": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_desktop": 50,
+        "padding_bottom_mobile": 50,
+        "section_title": "Welcome to my shop!",
+        "show_step": true
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "5f599a8f-de6e-4c0a-a086-6d540d93ae2f"
   ]
 }
